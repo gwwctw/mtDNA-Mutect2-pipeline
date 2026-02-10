@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=8G
 #SBATCH --time=01:00:00
-#SBATCH --output=/gtran/kobic/USER/slyang/01_RareDisease/03_mtDNA_analysis/01_cram2bam/logs/cram2bam_%A_%a.out
-#SBATCH --error=/gtran/kobic/USER/slyang/01_RareDisease/03_mtDNA_analysis/01_cram2bam/logs/cram2bam_%A_%a.err
+#SBATCH --output=/01_cram2bam/logs/cram2bam_%A_%a.out
+#SBATCH --error=/01_cram2bam/logs/cram2bam_%A_%a.err
 
 set -euo pipefail
 
@@ -17,11 +17,10 @@ set -euo pipefail
 ######################################
 # Config
 ######################################
-SAMTOOLS=/gtran/kgenome/UTILS/Tools/Miniconda3/envs/snakemake/bin/samtools
-WORKDIR=/gtran/kobic/USER/slyang/01_RareDisease/03_mtDNA_analysis/01_cram2bam
-# LIST=/gtran/kobic/USER/slyang/01_RareDisease/01_Batch_info/mtDNA_cram_list.tsv
-LIST=/gsave/kgenome/kobic/USER/dyl/REMAKE/G002-kobic-20260106/outcome
-REF=/gtran/kgenome/UTILS/Reference/GATK_bundle/Homo_sapiens_assembly38.fasta
+SAMTOOLS=/Miniconda3/envs/snakemake/bin/samtools
+WORKDIR=/03_mtDNA_analysis/01_cram2bam
+LIST=/outcome
+REF=/GATK_bundle/Homo_sapiens_assembly38.fasta
 
 ######################################
 # OFFSET logic
